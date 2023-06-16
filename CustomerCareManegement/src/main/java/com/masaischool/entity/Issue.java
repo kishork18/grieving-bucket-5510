@@ -29,4 +29,68 @@ public class Issue {
 	  @ManyToOne (fetch = FetchType.LAZY)
 	  @JoinColumn(name="CR_ID")
 	  CustomerRepresentative represntative;
+	  @ManyToOne (fetch = FetchType.LAZY)
+	  @JoinColumn(name="Customer_ID")
+	  Customer customer;
+	public Issue() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Issue(String desc, IssueStatus status, LocalDate date, String feedback, String reply,
+			CustomerRepresentative represntative, Customer customer) {
+		super();
+		this.desc = desc;
+		this.status = status;
+		this.date = date;
+		this.feedback = feedback;
+		this.reply = reply;
+		this.represntative = represntative;
+		this.customer = customer;
+	}
+	public int getIssueID() {
+		return IssueID;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public IssueStatus getStatus() {
+		return status;
+	}
+	public void setStatus(IssueStatus status) {
+		this.status = status;
+	}
+	public LocalDate getDate() {
+		return date;
+	}
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+	public String getFeedback() {
+		return feedback;
+	}
+	public void setFeedback(String feedback) {
+		this.feedback = feedback;
+	}
+	public String getReply() {
+		return reply;
+	}
+	public void setReply(String reply) {
+		this.reply = reply;
+	}
+	public CustomerRepresentative getRepresntative() {
+		return represntative;
+	}
+	public void setRepresntative(CustomerRepresentative represntative) {
+		this.represntative = represntative;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	  
 }
